@@ -1,0 +1,32 @@
+{
+  "name": "ci-notifiertelegrambot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/bot.js",
+  "scripts": {
+    "build": "webpack",
+    "server": "npm run build && node dist/server.js"
+  },
+  "author": "Antony Zhukovtsov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "telegraf": "^3.27.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-standart": "^0.2.0",
+    "eslint-plugin-import": "^2.16.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
