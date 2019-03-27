@@ -32,7 +32,15 @@ const generateMessage = (data) => {
   const changes = () => `Here the list what have been changed:
   ${commit.message}`;
 
-  return `${startedPart(environment)}\n${changes()}${generateVersionLinkPart()}`;
+  return `
+  🚀🚀🚀 New deployment has arrived 🚀🚀🚀
+  
+  ${startedPart(environment)}
+  
+  ${changes()}
+  🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
+  ${generateVersionLinkPart()}
+  🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉`;
 };
 
 export default generateMessage;
