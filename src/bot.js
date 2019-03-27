@@ -7,4 +7,4 @@ bot.on('sticker', ctx => ctx.reply('👍'));
 bot.hears('hi', (ctx) => { console.log('ctx---->', ctx.chat); return ctx.reply('Hey there'); });
 bot.telegram.sendMessage('202147475', 'hey ho');
 
-export default bot
+export default bot;

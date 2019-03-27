@@ -1,4 +1,6 @@
 import bot from './bot';
+import generateMessage from './util/messageGenerator';
+import sendMessageViaTelegram from './strategies/telegram';
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -10,16 +12,17 @@ app.use(bodyParser.json());
 
 // just for test purposes
 app.get('/', (req, res) => {
-  bot.telegram.sendMessage('202147475', 'hey ho');
+  sendMessageViaTelegram('initial load');
   res.send('Hello World!');
 });
 
 app.post('/pipeline-trigger', (req, res) => {
-  console.log('req', req);
   console.log('req.body', req.body);
-  bot.telegram.sendMessage('202147475', `hey ho ${Date.now()}`);
+  const message = generateMessage(req.body);
+  console.log('message---->', message);
+  sendMessageViaTelegram(message);
   res.status(200);
   res.send();
 });
 
-export default app
+export default app;
