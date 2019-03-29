@@ -20,6 +20,7 @@ app.post('/pipeline-trigger', (req, res) => {
   if (status === 'success') {
     const message = generateMessage(req.body);
     console.log('message---->', message);
+    sendMessageViaTelegram('-366551006', JSON.stringify(req.body, null, 2));
     sendMessageViaTelegram('-366551006', message);
     res.status(200).send();
   } else {
