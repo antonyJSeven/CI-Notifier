@@ -3,7 +3,7 @@ const git = require('simple-git')();
 const gitRep =  {
   getLastTag: () => {
     return new Promise((resolve, rej) => {
-      git.listRemote(['--tags','r', 'git@git.sami.int.thomsonreuters.com:collab-eikonmessenger/em-luna.git'],
+      git.listRemote(['--tags', 'git@git.sami.int.thomsonreuters.com:collab-eikonmessenger/em-luna.git'],
         (err, res) => {
         if(err) return rej(err);
         const versionRegexp = new RegExp('\\d*\\.\\d*\\.\\d*');
