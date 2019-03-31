@@ -23,7 +23,8 @@ app.post('/pipeline-trigger', (req, res) => {
         const message = JSON.stringify(req.body, null, 2);
         sendMessageViaTelegram('202147475', message);
       }
-    });
+    })
+  .catch(e => sendMessageViaTelegram('202147475', JSON.stringify(e, null, 2)))
 });
 
 export default app;
