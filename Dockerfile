@@ -1,4 +1,6 @@
 FROM node:alpine
+RUN apk add --update git && \
+  rm -rf /tmp/* /var/cache/apk/*
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
