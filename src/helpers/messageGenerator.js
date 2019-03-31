@@ -1,7 +1,7 @@
 import config from './eikonConfig';
 import { appListRegularStrings } from '../model';
 
-const generateMessage = (data) => {
+const generateMessage = (data, version) => {
   const {
     object_attributes,
     user,
@@ -17,7 +17,7 @@ const generateMessage = (data) => {
 
   const environment = object_attributes.stages.includes('build_alpha') ? 'alpha' : 'beta';
 
-  const generateVersionLink = (appName, env) => `${appName}:${object_attributes.tag}-->${config[`${env}`].path}/web/Apps/${appName}/${object_attributes.tag}`;
+  const generateVersionLink = (appName, env) => `${appName}:${version}-->${config[`${env}`].path}/web/Apps/${appName}/${version}`;
 
   const generateVersionLinkPart = () => {
     const appNamesList = parseCommit(commit.message);

@@ -9,13 +9,24 @@ const transporter = nodemailer.createTransport({
 });
 
 const mailOptions = {
-  from: 'huaaray', // sender address
+  from: 'LUNA Deploy Notifier', // sender address
   to: 'antonyjseven@gmail.com', // list of receivers
-  subject: 'Subject of your email. custom', // Subject line
-  html: '<p>message will be here</p>', // plain text body
+  // to: 'antonyjseven@gmail.com, leonid_andreiko@epam.com, daria_kozyr@epam.com, kateryna_matvieieva@epam.com, mykhailo_gorychev@epam.com', // list of receivers
+  subject: 'New LUNA deployment has been found', // Subject line
+  html: 'Default message', // plain text body
 };
 
-export const sendMail = () => transporter.sendMail(mailOptions, (err, info) => {
-  if (err) console.log(err);
-  else console.log(info);
+const parseTextMessage = msg => {
+  return msg.split('\n')
+    .map(elem => `<h5>${elem}</h5>`)
+    .join('\n');
+};
+
+const sendMessageViaEmail = (html) => transporter.sendMail(
+  {...mailOptions, html: parseTextMessage(html)},
+  (err, info) => {
+    if (err) console.log(err);
+    else console.log(info);
 });
+
+export default sendMessageViaEmail
