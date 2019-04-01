@@ -18,7 +18,7 @@ const generateMessage = (data) => {
 
   const environment = object_attributes.stages.includes('build_alpha') ? 'alpha' : 'beta';
 
-  const generateVersionLink = (appName, env) => `${appName}:${tag}-->${config[`${env}`].path}/web/Apps/${appName}/${tag}`;
+  const generateVersionLink = (appName, env) => `${appName}-->${config[`${env}`].path}/web/Apps/${appName}`;
 
   const generateVersionLinkPart = () => {
     const appNamesList = parseCommit(commit.message);
