@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = {
   from: 'LUNA Deploy Notifier', // sender address
-  to: 'antonyjseven@gmail.com, leonid_andreiko@epam.com, daria_kozyr@epam.com, kateryna_matvieieva@epam.com, mykhailo_gorychev@epam.com', // list of receivers
+  to: 'antonyjseven@gmail.com, leonid_andreiko@epam.com, daria_kozyr@epam.com, kateryna_matvieieva@epam.com, mykhailo_gorychev@epam.com, eikon_kyiv@thomson.com', // list of receivers
   subject: 'New LUNA deployment has been found', // Subject line
   html: 'Default message', // plain text body
 };
